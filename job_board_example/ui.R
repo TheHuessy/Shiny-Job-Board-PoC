@@ -11,41 +11,30 @@ library(shiny)
 library(htmltools)
 library(DT)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
 
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
+shinyUI(fluidPage(
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
+            ## You could turn this into your navigation area instead of the tabs there. I was lazy
             htmltools::h3("Sidebar Placeholder!")
             
         ),
 
-        # Show a plot of the generated distribution
         mainPanel(
             tabsetPanel(
                 tabPanel("DATA INPUT",
+                         ## We're using a uiOutput instead of just putting the UI elements here so that we can reset the form after submission via a single line function
                          uiOutput(outputId = "input_form")
-                         # textInput(inputId = "postition_title",
-                         #              label = "Job Title"),
-                         # textInput(inputId = "position_location",
-                         #           label = "Job Location"),
-                         # textAreaInput(inputId = "position_description",
-                         #           label = "Job Description"),
-                         # ## You can keep copying the above textInput pieces to add more fileds.
-                         # ## The textAreaInput field is the same thing, just with more "room" to see block/paragraph type text
-                         # 
-                         # actionButton(inputId = "submit_button",
-                         #              label = "Submit"
-                         #              )
-                         
                          ),
                 tabPanel("DATA VIEW",
+                         
+                         ## Button that refreshes the table and populates it from the csv file
                          actionButton(inputId = "refresh_button",
                                       label = "Refresh List"),
+                         
+                         ## The table output from the csv. Static until the refresh button is pushed
                          DT::dataTableOutput(outputId = "board_view")
                          
                 )
