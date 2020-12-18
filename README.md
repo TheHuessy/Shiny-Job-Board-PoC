@@ -1,5 +1,5 @@
 # Shiny-Job-Board-PoC
-This is a super rough PoC to answer /u/oscarhrose's question about how to input and display user generated job postings.
+This is a super rough PoC to answer /u/oscarhrose's [question](https://old.reddit.com/r/rshiny/comments/ke6kwe/rshiny_opportunities_board/?ref=share&ref_source=link) about how to input and display user generated job postings.
 
 
 ## Other Things To Look At/Think About
